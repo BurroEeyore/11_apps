@@ -15,7 +15,7 @@ class Circle(Figure):
         return 3.14 * self.radius ** 2
 
     def get_area(self):
-        return 'Area: {}'.format(self._area())
+        return self._area()
 
     def __repr__(self):
         return '{0}: radius {1}'.format(
@@ -33,7 +33,7 @@ class Rectangle(Figure):
         return self.weight * self.height
 
     def get_area(self):
-        return 'Area: {}'.format(self._area())
+        return self._area()
 
     def __repr__(self):
         return '{0}: weight - {1}, height - {2}'.format(
@@ -45,6 +45,6 @@ class Rectangle(Figure):
 
 if __name__ == "__main__":
     c = Circle(2)
-    print(c, c.get_area(), sep='\n')
+    print(c, 'Area: {}'.format(c.get_area()), sep='\n')
     r = Rectangle(3, 4)
-    print(r, r.get_area(), sep='\n')
+    print(r, 'Area: {}'.format(r.get_area()), sep='\n')
